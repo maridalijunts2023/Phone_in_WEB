@@ -1,0 +1,990 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.title1 {
+    position: absolute;
+    font-size: 80px;
+    text-transform: uppercase;
+    font-style: italic;
+    left: 10%;
+    top: 10%;
+    transition: 1s ease;
+}
+
+.title2 {
+    position: absolute;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 120px;
+    right: 2%;
+    top: 33%;
+    transition: 1s ease;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 12%;
+        height: 2px;
+        background-color: black;
+        left: -12%;
+        top: 50%;
+    }
+}
+
+.Phone_container {
+    width: 400px;
+    height: 90vh;
+    margin: 40px auto;
+    border-radius: 70px;
+    border: 15px solid rgb(42, 42, 42);
+    background-color: black;
+    box-shadow: 0 15px 40px black;
+    transform: rotateY(-30deg) rotateX(20deg) scale(1);
+    transition: 1s ease;
+}
+
+.phone_buttons {
+    width: auto;
+    position: absolute;
+    height: 76%;
+    /* background-color: gray; */
+    top: 60px;
+    right: -4%;
+    padding: 40px 1px;
+    /* border-top-right-radius: 120px; */
+    /* border-bottom-right-radius: 120px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+        padding: 30px 5px;
+        border-radius: 20px;
+        border: 1px solid rgb(80, 79, 79);
+        background-color: rgb(24, 24, 24);
+
+        &:last-child {
+            padding: 20px 5px;
+        }
+    }
+}
+
+.phone_box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: 10px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-image: url(https://blogdoiphone.com/wp-content/uploads/2024/06/iPadOS18-Blue-Portrait-Light.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    box-shadow: inset 0 0 60px black;
+    overflow: hidden;
+}
+
+.phone_bang {
+    position: absolute;
+    top: 0;
+    z-index: 99999999999999;
+    width: 43%;
+    height: 35px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 35%;
+        height: 6px;
+        border-radius: 5px;
+        background-color: rgb(46, 45, 45);
+    }
+
+    &::after {
+        content: '';
+        width: 15px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgb(34, 34, 34);
+        position: absolute;
+        right: 10%;
+        border: 1px solid rgb(76, 76, 76);
+    }
+}
+
+.time_wifi {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 25px;
+
+    &>span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        gap: 7px;
+        color: white;
+    }
+}
+
+.Blockscreen {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    transition: 1s ease;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(https://preview.redd.it/ios-18-inspired-wallpaper-v0-xbpn0ex1wy6d1.png?width=1080&crop=smart&auto=webp&s=848d620003c5d50b77f57a9ba596ae457e794788);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0 0 0;
+    box-shadow: inset 0 0 60px black;
+    cursor: pointer;
+
+    .fon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 9999999999;
+        background-color: black;
+        top: 0;
+    }
+
+    h1 {
+        font-size: 80px;
+        color: white;
+        font-weight: 300;
+    }
+
+    span {
+        color: white;
+        font-size: 18px;
+    }
+}
+
+@keyframes showblock {
+    from {
+        background-color: black;
+    }
+
+    to {
+        background-color: transparent;
+        display: none;
+    }
+}
+
+@keyframes hideblock {
+    from {
+        background-color: transparent;
+        display: none;
+    }
+
+    to {
+        background-color: black;
+    }
+}
+
+.camera_light {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: relative;
+
+    &::before {
+        content: '';
+        left: 30%;
+        position: absolute;
+        width: 40%;
+        height: 4px;
+        border-radius: 5px;
+        background-color: white;
+        top: 88%;
+    }
+
+    button {
+        width: 45px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        font-size: 22px;
+        cursor: pointer;
+        background-color: rgba(43, 42, 42, 0.609);
+        color: white;
+        display: grid;
+        place-items: center;
+        border: none;
+    }
+
+    span {
+        color: white;
+    }
+}
+
+.Weadther_App {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgb(76, 76, 255);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.446);
+    animation: showapps .5s ease forwards;
+    animation-delay: .100s;
+    opacity: 0;
+    display: none;
+
+    &>div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &>div {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            &:first-child i {
+                color: white;
+            }
+
+            &:last-child i {
+                color: orange;
+            }
+
+            h2 {
+                color: white;
+                font-weight: 300;
+            }
+
+            span {
+                color: white;
+            }
+        }
+
+        td {
+            color: white;
+
+
+            &:last-child i {
+                color: white;
+            }
+
+            i {
+                color: orange;
+            }
+        }
+    }
+}
+
+.Apps_container {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: none;
+    opacity: 0;
+    animation: showapps .5s ease forwards;
+    animation-delay: .200s;
+
+    button {
+        width: 60px;
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 15px;
+        cursor: pointer;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+
+        h3 {
+            color: white;
+            font-weight: 300;
+            text-transform: capitalize;
+            position: absolute;
+            text-align: center;
+            top: 105%;
+        }
+    }
+}
+
+@keyframes showapps {
+    from {
+        opacity: 0;
+        scale: .5;
+        display: none;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+        display: flex;
+    }
+}
+
+.Alarm_clock_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    inset: 0;
+    transform: scale(0);
+    transition: .5s;
+
+    .Time {
+        width: 100%;
+        text-align: center;
+        font-size: 80px;
+        transform: translateY(-150px);
+        animation: showtime 1s ease forwards;
+    }
+
+    #close {
+        width: 40px;
+        aspect-ratio: 1;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        right: 5%;
+        top: 6%;
+    }
+
+    .second_box {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        animation: show 1s ease forwards;
+
+        h1 {
+            font-size: 40px;
+            color: white;
+        }
+
+        &>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            &>button {
+                width: 40px;
+                aspect-ratio: 1;
+                border-radius: 5px;
+                background-color: white;
+                color: rgba(0, 0, 255, 0.687);
+                font-size: 20px;
+                border-radius: 50%;
+                border: none;
+            }
+        }
+    }
+
+    .Timer_box {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        &>div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &>div {
+                width: 150px;
+                max-height: 100%;
+                overflow-y: auto;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: perspective(1000px) rotateX(0deg);
+
+                &>button {
+                    position: absolute;
+                    font-size: 3.5em;
+                    white-space: nowrap;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    padding: 0px 10px;
+                    transform-style: preserve-3d;
+                    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+                    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(106px);
+                }
+
+            }
+        }
+    }
+
+    &>h1 {
+        font-weight: 300;
+        color: white;
+        animation: showtitle 1s ease forwards;
+    }
+
+    &>ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        animation: show 1s ease forwards;
+
+        li {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(37, 36, 36);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &>div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                &>h1 {
+                    color: white;
+                    font-weight: 300;
+                }
+
+                span {
+                    color: rgb(65, 64, 64);
+                    font-size: 14px;
+                }
+
+                input {
+                    width: 30px;
+                    aspect-ratio: 1;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &>nav {
+        width: 100%;
+        animation: shownav 1s ease forwards;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            li {
+                overflow: hidden;
+
+                button {
+                    width: 68px;
+                    aspect-ratio: 16/8;
+                    cursor: pointer;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    font-size: 11px;
+                    padding: 5px;
+                    border-radius: 10px;
+                    border: none;
+                    box-shadow: 0 0 20px inset black;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+
+        .inputs {
+            width: 100%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            animation: showinputs 1s ease forwards;
+
+            input {
+                width: auto;
+                text-align: center;
+                font-size: 25px;
+                outline: none;
+                background-color: transparent;
+                border: 1px solid black;
+                transition: .4s;
+                padding: 15px 5px;
+                border-radius: 10px;
+                color: gold;
+                font-weight: 600;
+
+                &:focus {
+                    border-color: gold;
+                }
+            }
+        }
+
+        .timer {
+            width: 100%;
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            animation: showtimer 1s ease forwards;
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            transform: scale(0);
+            animation: buttons 1s ease forwards;
+
+            button {
+                width: 100px;
+                padding: 10px 15px;
+                text-align: center;
+                font-size: 20px;
+                color: gold;
+                background-color: transparent;
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@keyframes showinputs {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes showtimer {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttons {
+    from {
+        opacity: 0;
+        transform: scale(0)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes showtitle {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes showtime {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+        scale: .2;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-150px);
+        scale: 1;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: .2;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes shownav {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.musicApp {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    padding: 40px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(30, 30, 30);
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s ease;
+
+    #close-music {
+        position: absolute;
+        top: 6%;
+        right: 10%;
+        padding: 5px;
+        font-size: 20px;
+        border: none;
+        background-color: transparent;
+        color: white;
+    }
+
+    h1 {
+        color: white;
+        text-transform: capitalize;
+    }
+
+    ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: contain;
+                }
+
+                span {
+                    color: white;
+                }
+            }
+
+            audio {
+                visibility: hidden;
+                display: none;
+            }
+
+            .play {
+                width: 40px;
+                aspect-ratio: 1;
+                padding: 5px;
+                font-size: 18px;
+                background-color: white;
+                border-radius: 50%;
+                border: none;
+            }
+        }
+    }
+}
+
+.gallery_app {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 50px 20px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 0;
+    gap: 20px;
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s ease;
+
+    .imgview {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    #close_gallery {
+        position: absolute;
+        top: 8%;
+        right: 10%;
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    .img_box {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    img {
+        width: 140px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        transition: 1s ease;
+    }
+}
+
+
+ .Contacts_app{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgb(25, 25, 25);
+    gap: 20px;
+    transition: 1s ease;
+    opacity: 0;
+    transform: scale(0);
+
+    #close_contact {
+        position: absolute;
+        top: 7%;
+        right: 10%;
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+    }
+
+    h1{
+        color: white;
+    }
+    ul{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+
+        li{
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: rgb(43, 42, 42);
+            box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.437);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h3{
+                color: white;
+            }
+            a{
+                width: 45px;
+                aspect-ratio: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                text-decoration: none;
+                background-color: green;
+                color: white;
+            }
+        }
+    }
+
+ }
+ .camera_app{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 20;
+    background-color: black;
+    padding: 40px 20px;
+    opacity: 0;
+    transform: scale(0);
+
+    #close_camera_app {
+        position: absolute;
+        top: 7%;
+        right: 10%;
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+    }
+
+    video{
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+
+        button{
+            width: 45px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border:  double 3px black;
+            background-color: white;
+        }
+
+        img{
+            width: 45px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+ }
